@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JetpackDemo</string>
+    <string name="message">" 这是一个信息"</string>
+    <string name="title">欢迎</string>
+</resources>
