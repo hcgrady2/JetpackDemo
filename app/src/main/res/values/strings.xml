@@ -6,4 +6,17 @@
     <string name="home_test_txt">测试</string>
     <string name="title">welcome</string>
     <string name="message">this is a message</string>
+    <string name="Lakers">Lakers</string>
+    <string name="Bucks">Bucks</string>
+    <string name="laker_core">0</string>
+    <string name="bucks_score">0</string>
+    <string name="addone">+1</string>
+    <string name="baddone">+1</string>
+    <string name="addtow">+2</string>
+    <string name="baddtwo">+2</string>
+    <string name="addthree">+3</string>
+    <string name="baddthree">+3</string>
+    <string name="todo">content description 就是给示例不好的人，辅助发音用的</string>
+    <string name="todo2">todo2</string>
+    <string name="ScoreDemo">ScoreDemo</string>
 </resources>
