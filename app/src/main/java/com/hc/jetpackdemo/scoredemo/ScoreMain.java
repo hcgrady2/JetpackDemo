@@ -1,7 +1,10 @@
 package com.hc.jetpackdemo.scoredemo;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,9 +43,17 @@ public class ScoreMain extends AppCompatActivity {
 
 
 
+        //sp 写入文件
+        SharedPreferences sp = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+        edit.putInt("NUMBER",100);
+        edit.apply();//异步的，commit 是同步提交的。
 
 
+        //sp 读取文件
+        int x = sp.getInt("NUMBER",1);
 
+        Log.i("SP_TAG", "onCreate: " + x);
 
 
     }

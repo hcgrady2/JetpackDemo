@@ -248,3 +248,18 @@ onCreate 中恢复数据。
 #### 8、SP 保存数据
 android 保存数据的方式： 内部存储（沙盒）、外部、SP，DB 。
 
+```
+     SharedPreferences sp = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+        edit.putInt("NUMBER",100);
+        edit.apply();//异步的，commit 是同步提交的。
+
+
+        //sp 读取文件
+        int x = sp.getInt("NUMBER",1);
+```
+
+
+#### 9、ViewModel 访问全局资源
+ViewModel 继承 AndroidViewModel 可以访问 Application 的资源（如,Context）；
+

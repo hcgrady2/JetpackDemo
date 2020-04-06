@@ -35,7 +35,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="@string/ScoreDemo"
+            android:text="ScoreDemo"
             android:textAllCaps="false"
             app:layout_constraintBottom_toTopOf="@+id/guideline10"
             app:layout_constraintEnd_toEndOf="parent"
