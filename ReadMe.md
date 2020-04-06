@@ -222,4 +222,29 @@ public class DashboardFragment extends Fragment {
 
 
 
+#### 7、ViewModel 在进程被杀死的情况下保存数据
+开发者选项设置不保留活动，点击 Home 键，程序被杀死。（依然会调用 onPause 和 onDestroy）
+
+方法一：
+
+onSaveInstance 中保存数据。
+
+onCreate 中恢复数据。
+
+
+方法二：
+
+1、添加 viewmodel_savedState 依赖。
+
+2、重写 ViewModel 构造方法，加入 SavedStateHandle 参数，并在构造函数中恢复数据
+
+3、handle 中的数据可以自动保存，只在取数据的时候恢复即可。
+
+
+通过这种方式，ViewModel 保存的数据的生命周期会更长。
+
+
+
+#### 8、SP 保存数据
+android 保存数据的方式： 内部存储（沙盒）、外部、SP，DB 。
 
