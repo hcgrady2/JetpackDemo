@@ -1,9 +1,11 @@
 package com.hc.jetpackdemo;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.hc.jetpackdemo.ui.detail.DetataiFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -11,7 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DetataiFragment.OnFragmentInteractionListener {
 
     private static final String TAG = "MainActivity";
     @Override
@@ -55,5 +57,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "onDestroy: ");
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+
+
+
+    //左上角的返回按键
+    @Override
+    public boolean onSupportNavigateUp() {
+        //return super.onSupportNavigateUp();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+        return  navController.navigateUp();
     }
 }

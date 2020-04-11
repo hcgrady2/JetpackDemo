@@ -263,3 +263,20 @@ android 保存数据的方式： 内部存储（沙盒）、外部、SP，DB 。
 #### 9、ViewModel 访问全局资源
 ViewModel 继承 AndroidViewModel 可以访问 Application 的资源（如,Context）；
 
+
+
+#### 10、Navigation 导航
+几个关键元素：
+NavHost: 容器和控制器
+Fragment :页面
+NavController 控制器
+NavGraph: Fragment 之间的跳转关系。
+
+
+
+
+基本所有的操作都是 AS 上的图形化操作，包括导航 action 的连线，指定 Fragment 之间的切换动画，Argumments 传递参数等。
+
+
+Navigation 中的数据传递：
+

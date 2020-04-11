@@ -19,4 +19,7 @@
     <string name="todo">content description 就是给示例不好的人，辅助发音用的</string>
     <string name="todo2">todo2</string>
     <string name="ScoreDemo">ScoreDemo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
