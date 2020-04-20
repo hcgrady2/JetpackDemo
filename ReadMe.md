@@ -280,3 +280,87 @@ NavGraph: Fragment 之间的跳转关系。
 
 Navigation 中的数据传递：
 
+
+
+#### 11、Lifecycles 
+Lifecycle 可以感知生命周期，需要实现接口。
+
+然后在需要感知的 Activity 中进行注册观察者。
+
+
+#### 12、Room
+作用
+
+访问 SQLite 
+
+需要学习的概念与关键点：
+
+Entity，Dao，Database，Migration,AysncTask ,Respository
+
+结合:
+RecyclerView 、RecyclerViewAdapter
+
+
+结合:
+ViewModel、LiveData、DataBinding、Navigation ..
+
+
+
+
+##### 1、 基本使用
+1、创建一个 Entity
+
+就是一个 Bean 对象，需要用Getter/Setter，同时使用 Room 里面的 @Entity 注解
+
+2、创建一个抽象类用来访问数据库
+
+类用 @Dao 注解
+
+增加用 @Intert
+
+修改用 @Update
+
+查询用 @Query
+
+3、创建抽象的 DataBase 对象，继承 Room 的 DataBase 对象
+
+主要用来返回 Dao 对象的
+
+
+这些类的实现都行系统帮我们实现的。
+
+
+
+
+使用方法：
+
+初始化：
+```
+        wordDataBase = Room.databaseBuilder(getContext(),WordDataBase.class,"word_db")
+                .allowMainThreadQueries()  //设置可以主线程查询（否则报错）
+                .build();
+        wordDao = wordDataBase.getWorldDao();
+```
+其他操作都调用 dao 对象的相应方法。
+
+
+##### 2、Room 进阶初级
+1 、Room 可以结合 LiveData 使用
+
+查询的数据改成 LiveData ，然后添加观察者，就不用手动刷新界面了。
+
+
+2、DataBase 改成单例模式
+
+
+
+3、数据更新操作等放到自线程
+
+
+
+4、数据管理应该放到 ViewModel 里面，不应该在 Activity 里面
+
+
+5、ViewModel 通过一个仓库类来获取数据管理数据。
+
+

@@ -1,10 +1,12 @@
 package com.hc.jetpackdemo.ui.notifications;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -21,6 +23,8 @@ public class NotificationsFragment extends Fragment {
 
     private NotificationsViewModel notificationsViewModel;
 
+    MyChronometer chronometer;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -28,6 +32,13 @@ public class NotificationsFragment extends Fragment {
                 ViewModelProviders.of(this).get(NotificationsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
 
+        chronometer = root.findViewById(R.id.chronometer);
+
+      //  chronometer.setBase(SystemClock.elapsedRealtime());
+      //  chronometer.start();
+
+
+        getLifecycle().addObserver(chronometer);
 
         return root;
     }
